@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-      "hackthon-starter": {
+      "hackathon-starter": {
         "projectType": "application",
         "schematics": {
           "@schematics/angular:component": {
@@ -21,7 +21,7 @@
           "build": {
             "builder": "@angular-devkit/build-angular:browser-esbuild",
             "options": {
-              "outputPath": "dist/hackthon-starter",
+              "outputPath": "dist/hackathon-starter",
               "index": "src/index.html",
               "main": "src/main.ts",
               "polyfills": [
@@ -73,10 +73,10 @@
             "builder": "@angular-devkit/build-angular:dev-server",
             "configurations": {
               "production": {
-                "buildTarget": "hackthon-starter:build:production"
+                "buildTarget": "hackathon-starter:build:production"
               },
               "development": {
-                "buildTarget": "hackthon-starter:build:development"
+                "buildTarget": "hackathon-starter:build:development"
               }
             },
             "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "buildTarget": "hackthon-starter:build"
+              "buildTarget": "hackathon-starter:build"
             }
           },
           "test": {
