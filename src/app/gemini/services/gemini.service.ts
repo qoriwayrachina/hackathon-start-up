@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { generateText } from '../custom-operators/generate-text.operator';
 import { GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_PRO_VISION_URL, GEMINI_SAFETY_SETTINGS } from '../gemini.constant';
 import { GeminiResponse } from '../interfaces/generate-response.interface';
-import { MultimodalInquiry } from '../interfaces/genmini.interface';
+import { MultimodalInquiry } from '../interfaces/gemini.interface';
 
 @Injectable({
   providedIn: 'root'

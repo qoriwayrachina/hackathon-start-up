@@ -22,7 +22,7 @@ import { setTitle } from './utils/title.util';
     h2 {
       margin-bottom: 0.5rem;
     }
-  ,
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
