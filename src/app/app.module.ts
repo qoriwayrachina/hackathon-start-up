@@ -2,19 +2,18 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
-import { AppMenuComponent } from './app-menu/app-menu.component';
+import { AppMenuModule } from './app-menu/app-menu.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AppMenuComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppMenuModule
   ],
   exports: [
-    AppMenuComponent,
     AppComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
