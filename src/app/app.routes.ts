@@ -1,19 +1,21 @@
-import { Route } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { GenerateTextComponent } from './gemini/generate-text/generate-text.component';
+import { GenerateTextMultimodalComponent } from './gemini/generate-text-multimodal/generate-text-multimodal.component';
 
-export const routes: Route[] = [
-    {
-        path: '',
-        pathMatch: 'full',
-        loadComponent: () => import('./gemini/generate-text/generate-text.component')
-            .then((m) => m.GenerateTextComponent)
-    },
-    {
-        path: 'text-multimodal',
-        loadComponent: () => import('./gemini/generate-text-multimodal/generate-text-multimodal.component')
-            .then((m) => m.GenerateTextMultimodalComponent)
-    },
-    {
-        path: '**',
-        redirectTo: '',
-    }
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: GenerateTextComponent
+  },
+  {
+    path: 'text-multimodal',
+    component: GenerateTextMultimodalComponent
+  }
 ];
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

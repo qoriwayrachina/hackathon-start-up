@@ -1,28 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { AppMenuComponent } from './app-menu/app-menu.component';
 import { setTitle } from './utils/title.util';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, AppMenuComponent],
-  template: `
-    <div>
-      <app-app-menu />
-       <h2>{{ title }}</h2>
-      <router-outlet />
-    </div>
-  `,
-  styles: `
-    div {
-      padding: 1rem;
-    }
-
-    h2 {
-      margin-bottom: 0.5rem;
-    }
-  `,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {

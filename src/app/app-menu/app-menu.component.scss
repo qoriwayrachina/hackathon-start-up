@@ -1,0 +1,31 @@
+.menu-container {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu>li {
+    margin-right: 1rem;
+}
+
+.menu-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #343a40;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #007bff;
+}
