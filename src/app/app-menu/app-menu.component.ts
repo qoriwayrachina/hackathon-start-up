@@ -8,4 +8,8 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./app-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppMenuComponent {}
+export class AppMenuComponent {
+  refreshPage() {
+    window.location.reload();
+  }
+}

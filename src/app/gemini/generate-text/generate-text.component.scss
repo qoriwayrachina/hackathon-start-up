@@ -16,10 +16,11 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  width: auto;
 }
 
 .prompt-box {
-  width: 300px;
+  width: fit-content;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;

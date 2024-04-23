@@ -1,5 +1,7 @@
 <div class="prompt-box">
-  <textarea class="prompt-input" rows="3" [(ngModel)]="prompt"></textarea>
-  <button class="prompt-button" (click)="askMe.emit()" [disabled]="vm.isLoading">{{ vm.buttonText }}</button>
-  <button class="clear-button" (click)="clearPrompt()">Clear</button>
+  <textarea class="prompt-input" rows="3" [(ngModel)]="promptValue"></textarea>
+  <div style="display: flex; justify-content: space-between;">
+    <button class="prompt-button" (click)="askMe.emit()" [disabled]="vm.isLoading" style="width: 45%; height: 50px;">{{ vm.buttonText }}</button>
+    <button class="clear-button" (click)="clearPrompt()" style="width: 45%; height: 50px;">Clear</button>
+  </div>
 </div>
