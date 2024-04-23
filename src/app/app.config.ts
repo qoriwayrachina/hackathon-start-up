@@ -1,12 +1,13 @@
 import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 import { provideMarkdown } from 'ngx-markdown';
-import { AppRoutingModule } from './app.routes';
+import { routes } from './app.routes';
 import { provideGeminiApi } from './gemini/gemini.provider';
 
 export const appConfig = {
   providers: [
     provideHttpClient(),
-    AppRoutingModule,
+    provideRouter(routes),
     provideGeminiApi(),
     provideMarkdown()
   ]
