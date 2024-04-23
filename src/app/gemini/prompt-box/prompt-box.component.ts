@@ -22,5 +22,9 @@ export class PromptBoxComponent {
     return this.viewModel();
   }
 
+  clearPrompt() {
+    this.prompt();
+  }
+
   askMe = output();
 }

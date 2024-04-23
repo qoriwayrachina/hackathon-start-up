@@ -1,35 +1,46 @@
 .prompt-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .prompt-input {
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  margin-bottom: 10px;
+  resize: vertical;
 }
 
-.prompt-button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
+.prompt-button,
+.clear-button {
+  padding: 10px 20px;
+  border-radius: 5px;
   border: none;
-  background-color: #007bff;
+  background-color: #007BFF;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-.prompt-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.prompt-button:hover,
+.clear-button:hover {
+  background-color: #0056b3;
+}
+
+.clear-button {
+  background-color: #dc3545;
+}
+
+.clear-button:hover {
+  background-color: #c82333;
 }
