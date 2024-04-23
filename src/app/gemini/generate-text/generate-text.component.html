@@ -3,7 +3,9 @@
   <div class="input-group">
     <app-prompt-box class="prompt-box" [loading]="loading()" [(prompt)]="prompt" />
   </div>
-  <div *ngIf="chatHistory$ | async as chatHistory" class="chat-history">
-    <app-chat-history [chatHistory]="chatHistory" />
+  <div class="chat-history">
+    @if (chatHistory$ | async; as chatHistory) {
+      <app-chat-history [chatHistory]="chatHistory" />
+    }
   </div>
 </div>
