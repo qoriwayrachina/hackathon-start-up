@@ -7,23 +7,7 @@ import { LineBreakPipe } from '../pipes/line-break.pipe';
   selector: 'app-chat-history',
   standalone: true,
   imports: [MarkdownComponent, LineBreakPipe],
-  template: `
-    <h3>Chat History</h3>
-    @if (chatHistory().length > 0) {
-      <div class="scrollable-list">
-        <ol>
-          @for (history of chatHistory(); track history) {
-            <li>
-              <p>{{ history.prompt }}</p>
-              <markdown [data]="lineBreakPipe.transform(history.response)" />
-            </li>
-          }
-        </ol>
-      </div>
-    } @else {
-      <p>No history</p>
-    }
-  `,
+  templateUrl: './chat-history.component.html',
   styleUrls: ['./chat-history.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
