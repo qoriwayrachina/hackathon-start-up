@@ -8,11 +8,6 @@ export const routes: Route[] = [
       .then((m) => m.GenerateTextComponent)
   },
   {
-    path: 'text-multimodal',
-    loadComponent: () => import('./gemini/generate-text-multimodal/generate-text-multimodal.component')
-      .then((m) => m.GenerateTextMultimodalComponent)
-  },
-  {
     path: '**',
     redirectTo: '',
   }

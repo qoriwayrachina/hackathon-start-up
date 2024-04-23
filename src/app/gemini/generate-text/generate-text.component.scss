@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2em;
+  color: #333;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.prompt-box {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.chat-history {
+  margin-top: 20px;
+  color: #333;
+}
