@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,21 +10,17 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PromptBoxComponent {
-  promptValue = '';
+  prompt = model.required<string>();
   loading = input.required<boolean>();
 
   viewModel = computed(() => ({
     isLoading: this.loading(),
-    buttonText: this.loading() ? 'Processing' : 'Ask me anything',
+    buttonText: this.loading() ? 'Thinking' : 'Ask me anything',
   }));
+
+  askMe = output();
 
   get vm() {
     return this.viewModel();
   }
-
-  clearPrompt() {
-    this.promptValue = '';
-  }
-
-  askMe = output();
 }

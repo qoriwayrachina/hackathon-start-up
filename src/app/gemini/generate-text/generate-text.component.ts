@@ -20,7 +20,7 @@ export class GenerateTextComponent implements OnInit {
   promptBox = viewChild.required(PromptBoxComponent);
 
   geminiService = inject(GeminiService);
-  promptValue = '';
+  prompt = signal('');
   loading = signal(false);
 
   chatHistory$!: Observable<HistoryItem[]>;
@@ -28,12 +28,12 @@ export class GenerateTextComponent implements OnInit {
   ngOnInit(): void {
     this.chatHistory$ = outputToObservable(this.promptBox().askMe)
       .pipe(
-        filter(() => this.promptValue !== ''),
+        filter(() => this.prompt() !== ''),
         tap(() => this.loading.set(true)),
         switchMap(() =>
-          this.geminiService.generateText(this.promptValue).pipe(finalize(() => this.loading.set(false)))
+          this.geminiService.generateText(this.prompt()).pipe(finalize(() => this.loading.set(false)))
         ),
-        scan((acc, response) => acc.concat({ prompt: this.promptValue, response }), [] as HistoryItem[]),
+        scan((acc, response) => acc.concat({ prompt: this.prompt(), response }), [] as HistoryItem[]),
         startWith([] as HistoryItem[])
       );
   }

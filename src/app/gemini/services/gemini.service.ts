@@ -37,32 +37,4 @@ export class GeminiService {
     })
     .pipe(generateText(3));
   }
-  
-  generateTextFromMultimodal({ prompt, mimeType, base64Data }: MultimodalInquiry): Observable<string> {
-    return this.httpClient.post<GeminiResponse>(this.geminiProVisionUrl, {
-      "contents": [
-        {
-            "role": "user",
-            "parts": [
-              {
-                "text": prompt
-              },
-              {
-                "inline_data": {
-                  "mime_type": mimeType,
-                  "data": base64Data
-                }
-              }
-          ]
-        }
-      ],
-      "generation_config": this.generationConfig,
-      "safetySettings": this.safetySetting
-    }, {
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .pipe(generateText(3));
-  }
 }
