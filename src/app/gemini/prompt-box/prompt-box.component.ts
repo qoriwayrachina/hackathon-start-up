@@ -23,4 +23,8 @@ export class PromptBoxComponent {
   get vm() {
     return this.viewModel();
   }
+
+  clearPrompt() {
+    this.prompt.set('');
+  }
 }
