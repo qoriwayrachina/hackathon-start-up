@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { GeminiConfig, GeminiSafetySetting } from './interfaces/gemini.interface';
+import { GeminiConfig, GeminiSafetySetting } from './interfaces/googleapi.interface';
 
 export const GEMINI_API_KEY = new InjectionToken<string>('API_KEY');
 export const GEMINI_PRO_URL = new InjectionToken<string>('GEMINI_PRO_URL');

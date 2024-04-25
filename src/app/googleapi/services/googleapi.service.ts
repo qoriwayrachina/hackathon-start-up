@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { generateText } from '../custom-operators/generate-text.operator';
-import { GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_SAFETY_SETTINGS } from '../gemini.constant';
+import { GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_SAFETY_SETTINGS } from '../googleapi.constant';
 import { GeminiResponse } from '../interfaces/generate-response.interface';
-import { MultimodalInquiry } from '../interfaces/gemini.interface';
+import { MultimodalInquiry } from '../interfaces/googleapi.interface';
 
 @Injectable({
   providedIn: 'root'

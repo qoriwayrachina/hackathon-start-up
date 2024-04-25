@@ -3,7 +3,7 @@ import config from '../../assets/config.json';
 import { CORE_GUARD } from '../core/core.constant';
 import { HARM_CATEGORY } from './enums/harm-category.enum';
 import { THRESHOLD } from './enums/threshold.enum';
-import { GEMINI_API_KEY, GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_SAFETY_SETTINGS } from './gemini.constant';
+import { GEMINI_API_KEY, GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_SAFETY_SETTINGS } from './googleapi.constant';
 
 export function provideGeminiApi(): EnvironmentProviders {
     const genAIBase = 'https://generativelanguage.googleapis.com/v1beta/models';

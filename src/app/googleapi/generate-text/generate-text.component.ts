@@ -6,7 +6,7 @@ import { Observable, filter, finalize, scan, startWith, switchMap, tap } from 'r
 import { ChatHistoryComponent } from '../chat-history/chat-history.component';
 import { HistoryItem } from '../interfaces/history-item.interface';
 import { PromptBoxComponent } from '../prompt-box/prompt-box.component';
-import { GeminiService } from '../services/gemini.service';
+import { GeminiService } from '../services/googleapi.service';
 
 @Component({
   selector: 'app-generate-text',
