@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { generateText } from '../custom-operators/generate-text.operator';
-import { GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_PRO_VISION_URL, GEMINI_SAFETY_SETTINGS } from '../gemini.constant';
+import { GEMINI_GENERATION_CONFIG, GEMINI_PRO_URL, GEMINI_SAFETY_SETTINGS } from '../gemini.constant';
 import { GeminiResponse } from '../interfaces/generate-response.interface';
 import { MultimodalInquiry } from '../interfaces/gemini.interface';
 
@@ -10,8 +10,7 @@ import { MultimodalInquiry } from '../interfaces/gemini.interface';
   providedIn: 'root'
 })
 export class GeminiService {
-  private readonly geminiProUrl = inject(GEMINI_PRO_URL);
-  private readonly geminiProVisionUrl = inject(GEMINI_PRO_VISION_URL);
+  private readonly geminiProUrl = inject(GEMINI_PRO_URL)
   private readonly generationConfig = inject(GEMINI_GENERATION_CONFIG);
   private readonly safetySetting = inject(GEMINI_SAFETY_SETTINGS);
   private httpClient = inject(HttpClient);
