@@ -5,11 +5,10 @@ import { routes } from './app.routes';
 import { provideGeminiApi } from './gemini/gemini.provider';
 
 export const appConfig = {
-    providers: [
-      provideHttpClient(),
-      provideRouter(routes),
-      provideGeminiApi(),
-      provideMarkdown()
-    ]
-  };
-  
+  providers: [
+    provideHttpClient(),
+    provideRouter(routes),
+    provideGeminiApi(),
+    provideMarkdown()
+  ]
+};

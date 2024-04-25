@@ -1,0 +1,41 @@
+h3 {
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.scrollable-list {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.markdown {
+  color: #333;
+}
+
+.no-history {
+  text-align: center;
+  color: #999;
+}
