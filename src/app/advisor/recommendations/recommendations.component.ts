@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [],
   template: `
+    <button (click)="onRecommend()">Recommend more</button>
     <p>
       {{ recommendations }}
     </p>
@@ -18,12 +19,13 @@ export class RecommendationsComponent implements OnInit{
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    const url = "http://localhost:5000/recommendations_article";
-    const data = {
-      key1: 'value1'
-    };
+    
+  }
 
-    this.http.post(url, data).subscribe(response => {
+  onRecommend() {
+    const url = "http://localhost:5000/recommendations_article";   
+
+    this.http.post(url, {}).subscribe(response => {
       this.recommendations = JSON.stringify(response);
       this.cd.markForCheck();
     })

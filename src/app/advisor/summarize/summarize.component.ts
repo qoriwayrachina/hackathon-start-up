@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [],
   template: `
-    <button>Summarize</button>
+    <button (click)="onSummarize()">Summarize</button>
     <p>
       {{articleSummary}}
     </p>
@@ -15,22 +15,21 @@ import { HttpClient } from '@angular/common/http';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummarizeComponent implements OnInit {
+
   public articleSummary: string = "";
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    const url = "http://localhost:5000/summary";
-    const data = {
-      key1: 'value1'
-    };
+    
+  }
 
-    this.http.post(url, data).subscribe(response => {
-      this.articleSummary = JSON.stringify(response);
-      //this.articleSummary = "hello";
+  onSummarize() {
+    const url = "http://localhost:5000/summary";
+
+    this.http.post(url, {}).subscribe(response => {
+      this.articleSummary = JSON.stringify(response);    
       this.cd.markForCheck();
     })
-
-    this.articleSummary = "goodbye";
   }
   
 
