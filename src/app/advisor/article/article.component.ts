@@ -5,6 +5,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
+    <h2>Fears about stagflation are mounting in the US</h2>
+    <br>
     <p>
     For the past few years, the US economy has been growing at a pace that seemed too good to be true.
 
