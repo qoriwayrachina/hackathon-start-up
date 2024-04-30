@@ -12,5 +12,4 @@ import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, Input } fro
 export class GridItemComponent {
   @Input()
   content: any;
-
 }
