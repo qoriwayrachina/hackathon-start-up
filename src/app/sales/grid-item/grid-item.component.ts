@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grid-item',
@@ -10,6 +10,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component } from '@ang
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridItemComponent {
-content: any;
-
+  @Input()
+  content: any;
 }

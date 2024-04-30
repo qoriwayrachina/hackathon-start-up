@@ -15,7 +15,7 @@ export const routes: Route[] = [
   {
     path: 'sales-view',
     pathMatch: 'full',
-    loadComponent: () => import('./sales-view/sales-view.component')
+    loadComponent: () => import('./sales/sales-view/sales-view.component')
       .then((m) => m.SalesViewComponent)
   },
   {
