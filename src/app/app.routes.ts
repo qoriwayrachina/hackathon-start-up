@@ -9,7 +9,7 @@ export const routes: Route[] = [
   {
     path: 'advisor-view',
     pathMatch: 'full',
-    loadComponent: () => import('./advisor-view/advisor-view.component')
+    loadComponent: () => import('./advisor/advisor-view/advisor-view.component')
       .then((m) => m.AdvisorViewComponent)
   },
   {

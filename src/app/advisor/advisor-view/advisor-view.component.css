@@ -7,7 +7,7 @@
 .article-grid-item {
     border: 1px solid black;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     grid-column: span 6;
     grid-row: span 10;
 }
@@ -15,7 +15,7 @@
 .summarize-grid-item {
     border: 1px solid black;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     grid-column: span 4;
     grid-row: span 3;
 }
@@ -23,7 +23,7 @@
 .recommend-grid-item {
     border: 1px solid black;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     grid-column: span 4;
     grid-row: span 7;
 }
