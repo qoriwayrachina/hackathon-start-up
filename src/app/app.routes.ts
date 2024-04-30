@@ -8,6 +8,18 @@ export const routes: Route[] = [
       .then((m) => m.GenerateTextComponent)
   },
   {
+    path: 'advisor-view',
+    pathMatch: 'full',
+    loadComponent: () => import('./advisor-view/advisor-view.component')
+      .then((m) => m.AdvisorViewComponent)
+  },
+  {
+    path: 'sales-view',
+    pathMatch: 'full',
+    loadComponent: () => import('./sales-view/sales-view.component')
+      .then((m) => m.SalesViewComponent)
+  },
+  {
     path: '**',
     redirectTo: '',
   }

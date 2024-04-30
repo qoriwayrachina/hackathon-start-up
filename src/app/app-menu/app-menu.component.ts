@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 @Component({
   selector: 'app-app-menu',
   standalone: true,
@@ -9,7 +9,18 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppMenuComponent {
+
+  constructor(private router: Router) {}
+ 
   refreshPage() {
     window.location.reload();
+  }
+
+  showAdvisorView() {
+    this.router.navigate(['/advisor-view'])
+  }
+
+  showSalesView() {
+    this.router.navigate(['/sales-view'])
   }
 }
