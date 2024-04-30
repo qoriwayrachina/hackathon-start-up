@@ -12,10 +12,6 @@ export class AppMenuComponent {
 
   constructor(private router: Router) {}
  
-  refreshPage() {
-    window.location.reload();
-  }
-
   showAdvisorView() {
     this.router.navigate(['/advisor-view'])
   }
