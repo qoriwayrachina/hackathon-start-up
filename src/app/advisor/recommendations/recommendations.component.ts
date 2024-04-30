@@ -1,21 +1,34 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface Recommendation {
+  title: string,
+  url: string
+}
+
+interface Recommendations {
+  content: Recommendation[]
+}
+
 @Component({
   selector: 'app-recommendations',
   standalone: true,
   imports: [],
   template: `
     <button (click)="onRecommend()">Recommend more</button>
-    <p>
-      {{ recommendations }}
-    </p>
+  
+    <ul>
+      @for (rec of recommendations; track rec) {
+        <li><a href="{{rec.url}}">{{rec.title}}</a></li>
+      }
+    </ul>
+    
   `,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecommendationsComponent implements OnInit{
-  public recommendations: string = "";
+  public recommendations: Recommendation[] = [];
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -25,8 +38,8 @@ export class RecommendationsComponent implements OnInit{
   onRecommend() {
     const url = "http://localhost:5000/recommendations_article";   
 
-    this.http.post(url, {}).subscribe(response => {
-      this.recommendations = JSON.stringify(response);
+    this.http.post<Recommendations>(url, {}).subscribe(response => {
+      this.recommendations = response.content;
       this.cd.markForCheck();
     })
   }

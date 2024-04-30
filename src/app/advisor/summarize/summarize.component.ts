@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface SummaryResponse {
+  content: string
+}
 @Component({
   selector: 'app-summarize',
   standalone: true,
@@ -18,7 +21,7 @@ export class SummarizeComponent implements OnInit {
 
   public articleSummary: string = "";
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
-
+  
   ngOnInit(): void {
     
   }
@@ -26,8 +29,8 @@ export class SummarizeComponent implements OnInit {
   onSummarize() {
     const url = "http://localhost:5000/summary";
 
-    this.http.post(url, {}).subscribe(response => {
-      this.articleSummary = JSON.stringify(response);    
+    this.http.post<SummaryResponse>(url, {}).subscribe(response => {
+      this.articleSummary = response.content;    
       this.cd.markForCheck();
     })
   }
