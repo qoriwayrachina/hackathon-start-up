@@ -4,8 +4,7 @@ export const routes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: () => import('./googleapi/generate-text/generate-text.component')
-      .then((m) => m.GenerateTextComponent)
+    redirectTo: 'advisor-view'
   },
   {
     path: 'advisor-view',
