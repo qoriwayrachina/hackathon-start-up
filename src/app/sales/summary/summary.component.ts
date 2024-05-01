@@ -25,9 +25,7 @@ export class SummaryComponent implements OnInit {
     private cd: ChangeDetectorRef
   ) {}
 
-  ngOnInit(): void {}
-
-  getSummaries() {
+  ngOnInit(): void {
     const url = "http://localhost:5000/summary_rollup";
 
     this.http.post<Summaries>(url, {}).subscribe((response => {

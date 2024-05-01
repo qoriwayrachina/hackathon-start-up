@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 interface TagSummary {
-  "Economy": string[],
-  "Federal Reserve": string[]
+  "tag": string,
+  "articles": string[]
 
 }
 interface TagSummaries {
-  content: TagSummary
+  content: TagSummary[]
 }
 @Component({
   selector: 'app-topic-tag',
@@ -26,16 +26,12 @@ export class TopicTagComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-  }
-
-  getTopicTag() {
-    const url = "http://localhost:5000/topic-tag";
+    const url = "http://localhost:5000/topics_rollup";
 
     this.http.post<TagSummaries>(url, {}).subscribe((response => {
-      this.tagSummaries = [response.content];
+      this.tagSummaries = response.content;
       this.cd.markForCheck();
     }));
-
   }
+
 }

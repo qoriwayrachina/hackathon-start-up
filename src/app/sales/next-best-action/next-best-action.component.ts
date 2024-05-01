@@ -2,7 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 interface NextBestAction {
-  content: string
+  content: {
+    title: string,
+    url: string
+  }
 }
 
 @Component({
@@ -14,21 +17,19 @@ interface NextBestAction {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NextBestActionComponent implements OnInit {
-  public nextBestAction: String[] = []
+  public nextBestAction: NextBestAction | undefined;
 
   constructor(
     private http: HttpClient,
     private cd: ChangeDetectorRef
   ) { }
 
-  ngOnInit(): void { }
-
-  getNextBestAction() {
+  ngOnInit(): void {
     const url = "http://localhost:5000/next_best_action";
 
     this.http.post<NextBestAction>(url, {}).subscribe((response => {
-      this.nextBestAction = [response.content]
+      this.nextBestAction = response;
       this.cd.markForCheck();
     }));
-  }
+   }
 }

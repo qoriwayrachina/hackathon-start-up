@@ -6,8 +6,21 @@ interface Recommendation {
   url: string
 }
 
+
+
 interface Recommendations {
   content: Recommendation[]
+}
+
+interface TagSummary {
+  
+    "Econonmy": string[],
+    "Federal Reserve": string[]
+    
+
+}
+interface TagSummaries {
+  content: TagSummary
 }
 
 @Component({
