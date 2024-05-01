@@ -1,15 +1,15 @@
 import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-grid-item',
+  selector: 'app-advisor-demographics',
   standalone: true,
   imports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './grid-item.component.html',
-  styleUrls: ['./grid-item.component.scss'],
+  templateUrl: './advisor-demographics.component.html',
+  styleUrls: ['./advisor-demographics.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GridItemComponent {
+export class AdvisorDemographicsComponent {
   @Input()
-  content: any;
+  advisorDemographics: any;
 }
