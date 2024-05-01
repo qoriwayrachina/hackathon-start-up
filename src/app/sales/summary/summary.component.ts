@@ -1,8 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
+interface Summaries {
+  content: Summary[]
+}
 interface Summary {
-  content: string
+  title: string;
+  summary: string;
 }
 
 @Component({
@@ -14,7 +18,7 @@ interface Summary {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummaryComponent implements OnInit {
-  public summaries: string[] = [];
+  public summaries: Summary[] = [];
 
   constructor(
     private http: HttpClient,
@@ -26,8 +30,8 @@ export class SummaryComponent implements OnInit {
   getSummaries() {
     const url = "http://localhost:5000/summary_rollup";
 
-    this.http.post<Summary>(url, {}).subscribe((response => {
-      this.summaries = [response.content];
+    this.http.post<Summaries>(url, {}).subscribe((response => {
+      this.summaries = response.content;
       this.cd.markForCheck();
     }));
   }

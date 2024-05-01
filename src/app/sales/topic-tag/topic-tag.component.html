@@ -2,9 +2,11 @@
   <h2 class="title">Topic Tags</h2>
   <div class="content">
     <div class="tag-list">
-      <div class="tag">
-        <span class="tag-icon">{{topicTag}}</span>
-      </div>
+      @for (topic of topicTags; track topic) {
+        <div class="tag">
+          <span class="tag-icon">{{topic}}</span>
+        </div>
+      }
     </div>
   </div>
 </div>

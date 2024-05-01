@@ -1,8 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
-interface TopicTags {
-  content: string
+interface TagSummary {
+  "Economy": string[],
+  "Federal Reserve": string[]
+
+}
+interface TagSummaries {
+  content: TagSummary
 }
 @Component({
   selector: 'app-topic-tag',
@@ -13,7 +18,7 @@ interface TopicTags {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopicTagComponent implements OnInit {
-  public topicTag: string = "";
+  public tagSummaries: TagSummary[] = [];
 
   constructor(
     private http:HttpClient,
@@ -27,8 +32,8 @@ export class TopicTagComponent implements OnInit {
   getTopicTag() {
     const url = "http://localhost:5000/topic-tag";
 
-    this.http.post<TopicTags>(url, {}).subscribe((response => {
-      this.topicTag = response.content;
+    this.http.post<TagSummaries>(url, {}).subscribe((response => {
+      this.tagSummaries = [response.content];
       this.cd.markForCheck();
     }));
 
