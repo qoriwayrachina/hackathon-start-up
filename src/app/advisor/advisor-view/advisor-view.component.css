@@ -1,29 +1,96 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-header,
+.sidebar-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-header h2,
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.main-content,
+.sidebar {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.main-content {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
 }
 
 .article-grid-item {
-    border: 1px solid black;
-    padding: 20px;
-    text-align: left;
-    grid-column: span 6;
-    grid-row: span 10;
+    grid-row: 2;
+}
+
+.sidebar {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .summarize-grid-item {
-    border: 1px solid black;
-    padding: 20px;
-    text-align: left;
-    grid-column: span 4;
-    grid-row: span 3;
+    grid-row: 2;
 }
 
 .recommend-grid-item {
-    border: 1px solid black;
-    padding: 20px;
-    text-align: left;
-    grid-column: span 4;
-    grid-row: span 7;
+    grid-row: 3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
+    }
+
+    .summarize-grid-item {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .recommend-grid-item {
+        grid-column: 2;
+        grid-row: 2;
+    }
 }
