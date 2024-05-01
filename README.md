@@ -4,28 +4,7 @@ Call Gemini REST API to generate text from text input and image
 
 Github Page: https://github.com/qoriwayrachina/hackthon-start-up
 
-# Create new API Key
-
-Go to https://aistudio.google.com/app/apikey to create an API key for a new or existing Google Cloud project
-
-# Replace the API Key
-
-- (first time) chmod a+x ./generate-config-file.sh
-- execute the shell script to generate the API key in src/assets/config.json
-
-```sh
-./generate-config-file.sh  <Gemini api key>
-```
-
 # Compile codes to deploy to github page
-
-- switch to gh-pages branch
-- (first time) chmod a+x ./deploy-github-page.sh
-- execute the shell script to compiles to docs/ folder
-
-```sh
-./deploy-github-page.sh  <Gemini api key>
-```
 - commit and push the codes the remote repository
 
 ## Development server
