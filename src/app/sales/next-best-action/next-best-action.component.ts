@@ -18,6 +18,7 @@ interface NextBestAction {
 })
 export class NextBestActionComponent implements OnInit {
   public nextBestAction: NextBestAction | undefined;
+  public isLoading: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -26,8 +27,10 @@ export class NextBestActionComponent implements OnInit {
 
   ngOnInit(): void {
     const url = "http://localhost:5000/next_best_action";
+    this.isLoading = true;
 
     this.http.post<NextBestAction>(url, {}).subscribe((response => {
+      this.isLoading = false;
       this.nextBestAction = response;
       this.cd.markForCheck();
     }));

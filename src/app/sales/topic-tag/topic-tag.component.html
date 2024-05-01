@@ -4,16 +4,18 @@
     <div class="tag-list">
       <table>
         <th>Topic</th><th># articles read</th>
-        @for (ts of tagSummaries; track ts) {
-          <tr>
-            <td>{{ts.tag}}</td><td style="text-align: center;">{{ts.articles.length}}</td>
-          </tr>
-          <!--
-          <div class="tag">
-            <span class="tag-icon">{{ts.tag}}</span>
-          </div>
-          -->    
+        @if(isLoading) {
+          <br>
+          <p>Loading...</p>
         }
+        @else {
+          @for (ts of tagSummaries; track ts) {
+            <tr>
+              <td>{{ts.tag}}</td><td style="text-align: center;">{{ts.articles.length}}</td>
+            </tr>        
+          }
+        }
+        
     </table>
     </div>
   </div>

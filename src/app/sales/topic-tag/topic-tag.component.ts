@@ -19,6 +19,7 @@ interface TagSummaries {
 })
 export class TopicTagComponent implements OnInit {
   public tagSummaries: TagSummary[] = [];
+  public isLoading: boolean = false;
 
   constructor(
     private http:HttpClient,
@@ -27,8 +28,10 @@ export class TopicTagComponent implements OnInit {
 
   ngOnInit(): void {
     const url = "http://localhost:5000/topics_rollup";
+    this.isLoading = true;
 
     this.http.post<TagSummaries>(url, {}).subscribe((response => {
+      this.isLoading = false;
       this.tagSummaries = response.content.sort((ts1, ts2) => ts2.articles.length - ts1.articles.length);
       this.cd.markForCheck();
     }));
