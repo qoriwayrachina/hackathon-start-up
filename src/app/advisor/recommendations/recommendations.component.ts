@@ -30,18 +30,25 @@ interface TagSummaries {
   template: `
     <button (click)="onRecommend()">Recommend more</button>
   
-    <ul>
+    @if(isLoading) {
+      <br><br>
+      <p>Loading...</p>
+    }
+    @else {
+      <br><br>
+      <ul>
       @for (rec of recommendations; track rec) {
         <li><a href="{{rec.url}}">{{rec.title}}</a></li>
       }
-    </ul>
-    
+      </ul>
+    }    
   `,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecommendationsComponent implements OnInit{
   public recommendations: Recommendation[] = [];
+  public isLoading: boolean = false;
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -50,8 +57,10 @@ export class RecommendationsComponent implements OnInit{
 
   onRecommend() {
     const url = "http://localhost:5000/recommendations_article";   
+    this.isLoading = true;
 
     this.http.post<Recommendations>(url, {}).subscribe(response => {
+      this.isLoading = false;
       this.recommendations = response.content;
       this.cd.markForCheck();
     })
