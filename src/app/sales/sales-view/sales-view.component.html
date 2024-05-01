@@ -1,7 +1,26 @@
-<div class="grid-container">
-  <app-advisor-demographics [advisorDemographics]="'Item 1'" class="span-two-columns"></app-advisor-demographics>
-  <app-similar-article [similarArticle]="'Item 2'" class="span-two-columns"></app-similar-article>
-  <app-summary [summary]="'Item 3'" class="span-two-columns"></app-summary>
-  <app-topic-tag [topicTags]="'Item 4'" class="span-two-columns"></app-topic-tag>
-  <app-web-usage [webUsage]="'Item 5'" class="span-two-columns"></app-web-usage>
+<div class="container">
+  <!-- First row -->
+  <div class="advisor-demographics-grid">
+    <app-advisor-demographics [advisorDemographics]="'Item 1'"></app-advisor-demographics>
+  </div>
+
+  <!-- Second row -->
+  <div class="row">
+    <div class="web-usage-grid">
+      <app-web-usage [webUsage]="'Item 2'"></app-web-usage>
+    </div>
+    <div class="topic-tag-grid">
+      <app-topic-tag [topicTags]="'Item 3'"></app-topic-tag>
+    </div>
+  </div>
+
+  <!-- Third row -->
+  <div class="row">
+    <div class="summary-grid">
+      <app-summary [summary]="'Item 4'"></app-summary>
+    </div>
+    <div class="similar-article-grid">
+      <app-similar-article [similarArticle]="'Item 5'"></app-similar-article>
+    </div>
+  </div>
 </div>

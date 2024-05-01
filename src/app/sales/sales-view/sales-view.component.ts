@@ -16,7 +16,7 @@ import { WebUsageComponent } from '../web-usage/web-usage.component';
     WebUsageComponent
   ],
   templateUrl: "./sales-view.component.html",
-  styleUrl: "./sales-view.component.css",
+  styleUrl: "./sales-view.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SalesViewComponent {

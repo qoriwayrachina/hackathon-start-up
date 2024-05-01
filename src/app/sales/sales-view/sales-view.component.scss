@@ -1,0 +1,67 @@
+/* Define color variables */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+}
+
+/* Apply a grid layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+/* Style grid items */
+.advisor-demographics-grid,
+.web-usage-grid,
+.topic-tag-grid,
+.summary-grid,
+.similar-article-grid {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.advisor-demographics-grid:hover,
+.web-usage-grid:hover,
+.topic-tag-grid:hover,
+.summary-grid:hover,
+.similar-article-grid:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Row styles */
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+/* Typography styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
