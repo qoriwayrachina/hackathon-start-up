@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AdvisorDemographicsComponent } from '../advisor-demographics/advisor-demographics.component';
-import { SimilarArticleComponent } from '../similar-article/similar-article.component';
+import { NextBestActionComponent } from '../next-best-action/next-best-action.component';
 import { SummaryComponent } from '../summary/summary.component';
 import { TopicTagComponent } from '../topic-tag/topic-tag.component';
 import { WebUsageComponent } from '../web-usage/web-usage.component';
@@ -10,7 +10,7 @@ import { WebUsageComponent } from '../web-usage/web-usage.component';
   standalone: true,
   imports: [
     AdvisorDemographicsComponent,
-    SimilarArticleComponent,
+    NextBestActionComponent,
     SummaryComponent,
     TopicTagComponent,
     WebUsageComponent
