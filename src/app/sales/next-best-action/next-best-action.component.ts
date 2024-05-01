@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-similar-article',
+  selector: 'app-next-best-action',
   standalone: true,
   imports: [],
-  templateUrl: './similar-article.component.html',
-  styleUrls: ['./similar-article.component.scss'],
+  templateUrl: './next-best-action.component.html',
+  styleUrls: ['./next-best-action.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SimilarArticleComponent {
+export class NextBestActionComponent {
   @Input()
   similarArticle: any;
 }
