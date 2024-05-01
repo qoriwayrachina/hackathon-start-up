@@ -1,0 +1,58 @@
+/* Define color variables */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+}
+
+.next-best-action {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    .next-best-action-card {
+      background-color: var(--background-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .next-best-action-details {
+        padding: 16px;
+
+        .article-meta {
+          display: flex;
+          gap: 8px;
+          font-size: 12px;
+          color: var(--text-color);
+
+          .next-best-action-input {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

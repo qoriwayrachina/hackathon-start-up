@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.article-grid-item {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: left;
+    grid-column: span 6;
+    grid-row: span 10;
+}
+
+.summarize-grid-item {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: left;
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.recommend-grid-item {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: left;
+    grid-column: span 4;
+    grid-row: span 7;
+}

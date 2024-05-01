@@ -1,0 +1,13 @@
+<div class="summary">
+  <h2 class="title">Summary</h2>
+  <div class="content">
+    <div class="section">
+      <h3 class="section-title">Article Summaries</h3>
+      @for (summary of summaries; track summary) {
+        <ul class="key-points">
+          <li>{{summary.summary}}</li>
+        </ul>
+      }
+    </div>
+  </div>
+</div>
