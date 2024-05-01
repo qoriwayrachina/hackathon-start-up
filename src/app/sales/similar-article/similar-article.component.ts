@@ -4,12 +4,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-similar-article',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      similar-article works!
-    </p>
-  `,
-  styles: ``,
+  templateUrl: './similar-article.component.html',
+  styleUrls: ['./similar-article.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimilarArticleComponent {

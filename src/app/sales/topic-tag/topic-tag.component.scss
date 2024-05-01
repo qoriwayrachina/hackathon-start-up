@@ -1,0 +1,52 @@
+/* Define color variables */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+}
+
+.topic-tag {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+
+  .content {
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tag {
+        display: flex;
+        align-items: center;
+        background-color: var(--background-color);
+        border-radius: 20px;
+        padding: 8px 12px;
+        transition: background-color 0.3s ease;
+
+        .tag-icon {
+          font-size: 16px;
+          margin-right: 8px;
+        }
+
+        .tag-label {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

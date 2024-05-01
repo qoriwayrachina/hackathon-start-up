@@ -4,12 +4,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-web-usage',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      web-usage works!
-    </p>
-  `,
-  styles: ``,
+  templateUrl: "./web-usage.component.html",
+  styleUrls: ["./web-usage.component.scss"] ,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WebUsageComponent {

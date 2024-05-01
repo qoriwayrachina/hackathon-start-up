@@ -6,7 +6,7 @@
   --background-color: #f9f9f9;
 }
 
-.advisor-demographics {
+.summary {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -35,37 +35,21 @@
         margin-bottom: 10px;
       }
 
-      .gender-info {
-        display: flex;
-        gap: 20px;
+      .key-points {
+        list-style-type: disc;
+        padding-left: 20px;
 
-        .gender-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-
-          .gender-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-
-            &.male {
-              background-color: var(--primary-color);
-            }
-
-            &.female {
-              background-color: var(--secondary-color);
-            }
-          }
-
-          .gender-label {
-            font-weight: 600;
-          }
-
-          .gender-value {
-            font-weight: 700;
-          }
+        li {
+          font-size: 16px;
+          line-height: 1.5;
+          margin-bottom: 8px;
         }
+      }
+
+      .final-thoughts {
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--text-color);
       }
     }
   }

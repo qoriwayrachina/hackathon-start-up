@@ -1,1 +1,21 @@
-<div class="grid-item">{{ advisorDemographics }}</div>
+<div class="advisor-demographics">
+  <h2 class="title">Advisor Demographics</h2>
+  <div class="content">
+    <div class="section">
+      <h3 class="section-title">Gender</h3>
+      <div class="gender-info">
+        <div class="gender-item">
+          <div class="gender-icon male"></div>
+          <div class="gender-label">Male</div>
+          <div class="gender-value">{{ advisorDemographics.malePercentage }}%</div>
+        </div>
+        <div class="gender-item">
+          <div class="gender-icon female"></div>
+          <div class="gender-label">Female</div>
+          <div class="gender-value">{{ advisorDemographics.femalePercentage }}%</div>
+        </div>
+      </div>
+    </div>
+    <!-- Add more sections as needed -->
+  </div>
+</div>

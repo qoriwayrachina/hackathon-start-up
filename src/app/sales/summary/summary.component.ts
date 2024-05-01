@@ -4,12 +4,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-summary',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      summary works!
-    </p>
-  `,
-  styles: ``,
+  templateUrl: './summary.component.html',
+  styleUrls: ['./summary.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummaryComponent {
