@@ -4,9 +4,11 @@
     <div class="section">
       <h3 class="section-title">Article Summaries</h3>
       @for (summary of summaries; track summary) {
-        <ul class="key-points">
-          <li>{{summary.title}}:{{summary.summary}}</li>
-        </ul>
+        <div class="key-points">
+          <h4>{{summary.title}}</h4>
+          <section class="summary-details">
+            <p>{{summary.summary}}</p>
+        </div>
       }
     </div>
   </div>

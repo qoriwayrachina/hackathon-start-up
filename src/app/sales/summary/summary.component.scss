@@ -36,20 +36,14 @@
       }
 
       .key-points {
-        list-style-type: disc;
         padding-left: 20px;
 
-        li {
+        .summary-details{
           font-size: 16px;
           line-height: 1.5;
           margin-bottom: 8px;
         }
-      }
 
-      .final-thoughts {
-        font-size: 16px;
-        line-height: 1.5;
-        color: var(--text-color);
       }
     }
   }
