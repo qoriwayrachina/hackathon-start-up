@@ -29,7 +29,7 @@ export class TopicTagComponent implements OnInit {
     const url = "http://localhost:5000/topics_rollup";
 
     this.http.post<TagSummaries>(url, {}).subscribe((response => {
-      this.tagSummaries = response.content;
+      this.tagSummaries = response.content.sort((ts1, ts2) => ts2.articles.length - ts1.articles.length);
       this.cd.markForCheck();
     }));
   }

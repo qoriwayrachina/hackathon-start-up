@@ -1,12 +1,20 @@
 <div class="topic-tag">
-  <h2 class="title">Topic Tags</h2>
+  <h2 class="title">Advisor's Interests</h2>
   <div class="content">
     <div class="tag-list">
-      @for (ts of tagSummaries; track ts) {
-        <div class="tag">
-          <span class="tag-icon">{{ts.tag}}</span>
-        </div>
-      }
+      <table>
+        <th>Topic</th><th># articles read</th>
+        @for (ts of tagSummaries; track ts) {
+          <tr>
+            <td>{{ts.tag}}</td><td style="text-align: center;">{{ts.articles.length}}</td>
+          </tr>
+          <!--
+          <div class="tag">
+            <span class="tag-icon">{{ts.tag}}</span>
+          </div>
+          -->    
+        }
+    </table>
     </div>
   </div>
 </div>
