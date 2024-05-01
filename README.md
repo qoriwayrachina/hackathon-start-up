@@ -1,6 +1,6 @@
 # hackthon-start-up
 
-Call Gemini REST API to generate text from text input and image
+Call backend service integrated with gpt 3.5 turbo to generate responses from prompt.
 
 Github Page: https://github.com/qoriwayrachina/hackthon-start-up
 
